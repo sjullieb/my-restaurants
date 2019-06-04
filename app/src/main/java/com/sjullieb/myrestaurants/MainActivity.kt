@@ -1,5 +1,6 @@
 package com.sjullieb.myrestaurants
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,7 +14,10 @@ class MainActivity : AppCompatActivity() {
 
         findRestaurantBtn.setOnClickListener(){
             println("Button clicked")
-            Toast.makeText(this, "Hello!", Toast.LENGTH_LONG).show()
+           // Toast.makeText(this, "Hello!", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, RestaurantsActivity::class.java)
+            intent.putExtra("location", locationEditTxt.text)
+            startActivity(intent)
         }
 
     }
