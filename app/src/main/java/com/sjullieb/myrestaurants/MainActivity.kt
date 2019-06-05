@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
+const val EXTRA_LOCATION = "location"
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             println("Button clicked")
            // Toast.makeText(this, "Hello!", Toast.LENGTH_LONG).show()
             val intent = Intent(this, RestaurantsActivity::class.java)
-            intent.putExtra("location", locationEditTxt.text)
+            intent.putExtra(EXTRA_LOCATION, locationEditTxt.text.toString())
             startActivity(intent)
         }
 

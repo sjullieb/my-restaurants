@@ -2,6 +2,7 @@ package com.sjullieb.myrestaurants
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.content.Intent
 import kotlinx.android.synthetic.main.activity_restaurants.*
 
 class RestaurantsActivity : AppCompatActivity() {
@@ -10,8 +11,11 @@ class RestaurantsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurants)
 
-        val zipCode = intent.getStringExtra("location")
+        //val intent = savedInstanceState.getIntent();
+        //var bundle: Bundle? =intent.extras
+
+        val zipCode = intent.getStringExtra(EXTRA_LOCATION)
         locationTxt.text = zipCode
-        println(zipCode)
+        println("recieved ZIP code " + zipCode)
     }
 }
